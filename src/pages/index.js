@@ -41,7 +41,10 @@ function Index(props) {
     setList(props.items)
   }
 
-  return <div>
+  return <div style={{"display": "flex",
+  "flexDirection": "column",
+  "justifyContent": "center",
+  "alignItems": 'center'}}>
     <h1>RealCar</h1>
     <h3>Estoque na Nuvem</h3>
     <div>
@@ -52,7 +55,7 @@ function Index(props) {
     type="text" />
     <button onClick={clearInput} style={{'marginLeft': '10px'}}>Limpar</button>
     </div>
-
+    <div style={{'marginTop': '10px'}}>Itens encontrados: <strong>{list.length}</strong></div>
     <div>
       {list.map(
         (item)=>(
