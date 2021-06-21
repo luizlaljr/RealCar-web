@@ -16,7 +16,23 @@ function Index(props) {
 
   const handleList = (e) => {
     setInput(e.target.value)
-    const newList = props.items.filter(item => item.name.includes(`${e.target.value.toUpperCase()}`))
+    const fetchInput = e.target.value.toUpperCase()
+    const newList = []
+    const listFetch = fetchInput.split(' ')
+    for (let i = 0; i < props.items.length; i++) {
+      const item = props.items[i];
+      let count = 0
+      for (let j = 0; j < listFetch.length; j++) {
+        const fetch = listFetch[j]; 
+        if(item.name.indexOf(fetch) !== -1){
+          count++;
+        }
+        if(count === listFetch.length){
+          newList.push(item)
+        }
+      }
+    }
+    console.log(newList)
     setList(newList)
   }
 
