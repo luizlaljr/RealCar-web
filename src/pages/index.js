@@ -55,7 +55,7 @@ function Index(props) {
     type="text" />
     <button onClick={clearInput} style={{'marginLeft': '10px'}}>Limpar</button>
     </div>
-    <div style={{'marginTop': '10px'}}>Itens encontrados: <strong>{list.length}</strong></div>
+    <div style={{'marginTop': '15px'}}>Itens encontrados: <strong>{list.length}</strong></div>
     <div>
       {list.map(
         (item)=>(
